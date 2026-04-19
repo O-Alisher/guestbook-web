@@ -1,0 +1,22 @@
+@page
+@model GuestBook.Web.Pages.GalleryModel
+
+<h1>Галерея</h1>
+
+@if (Model.BlobUrls != null && Model.BlobUrls.Count > 0)
+{
+    @foreach (var url in Model.BlobUrls)
+    {
+        <div>
+            <img src="@url" style="max-width:200px;" />
+            <form method="post" asp-page-handler="Delete">
+                <input type="hidden" name="url" value="@url" />
+                <button type="submit">Удалить</button>
+            </form>
+        </div>
+    }
+}
+else
+{
+    <p>Нет изображений в галерее.</p>
+}
