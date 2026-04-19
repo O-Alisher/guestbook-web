@@ -1,23 +1,32 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using GuestBook.Web.Services;
 using GuestBook.Web.Models;
+using GuestBook.Web.Services;
 
-namespace GuestBook.Web.Pages;
-
-public class AllEntriesModel : PageModel
+namespace GuestBook.Web.Pages
 {
-    private readonly TableStorageService _table;
-
-    public IEnumerable<GuestBookEntry> Entries { get; set; }
-        = new List<GuestBookEntry>();
-
-    public AllEntriesModel(TableStorageService table)
+    public class AllEntriesModel : PageModel
     {
-        _table = table;
-    }
+        private readonly TableStorageService _table;
 
-    public void OnGet()
-    {
-        Entries = _table.GetAllEntries();
+        public IEnumerable<GuestBookEntry> Entries
+            { get; set; } = new List<GuestBookEntry>();
+
+        public AllEntriesModel(TableStorageService table)
+        {
+            _table = table;
+        }
+
+        public void OnGet()
+        {
+            Entries = _table.GetAllEntries();
+        }
+
+        public async Task<IActionResult> OnPostDeleteAsync(
+            string partitionKey, string rowKey)
+        {
+            await _table.DeleteEntryAsync(partitionKey, rowKey);
+            return RedirectToPage();
+        }
     }
 }
