@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GuestBook.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8bec13464e2a5d0f7b441f662a3420c37eb07969")]
 [assembly: System.Reflection.AssemblyProductAttribute("GuestBook.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GuestBook.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
