@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\.github",
-    "\\.github\\workflows"
+    "\\.github\\workflows",
+    "\\Services"
   ],
-  "SelectedNode": "\\.github\\workflows\\deploy.yml",
+  "SelectedNode": "\\Services\\TableStorageService.cs",
   "PreviewInSolutionExplorer": false
 }
